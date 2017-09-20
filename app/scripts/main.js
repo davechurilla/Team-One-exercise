@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener('DOMContentLoaded', function(event) { 
 
 var heroGalleryDb = [
     {img:'http://placekitten.com/g/750/500',name:'Zeus',title:'Being cute',age:'1 month'},
@@ -15,7 +15,7 @@ function init() {
 
 	var img1 = document.getElementsByClassName('slide-img')[0];
 	img1.onload = function() {
-    console.log("Image 1 ready to append");
+    console.log('Image 1 ready to append');
     // var slideEl = document.getElementsByClassName('slide')[0];
 	var slideImg = document.getElementsByClassName('slide-img')[0];
 	var slideHeight= slideImg.offsetHeight;
