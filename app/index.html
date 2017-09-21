@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild <-->
 
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -30,29 +31,55 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <div class="hero-unit">
-      <h1>Totally Kickass Kitten Slideshow!</h1>
-            <div class="slider">
+    <header><h1 >Totally Kickass Kitten Slideshow!</h1></header>
 
-                <span class="nav_arrow prev" style="float: left;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
-                </span>
+    <section id="heroUnit">
+      
+          <div class="slider">
+              <button class="nav_arrow prev">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+              </button>   
 
-                <div class="frame" style="float: left;">
-                    <ul class="slides" id="slideContainer">
-                          <!-- dynamically inserted from javascript -->
-                        <div style="clear:both;"></div>   
-                    </ul>
-                </div>
+              <div class="frame">
+                  <ul class="slides" id="slideContainer">
+                      <li class="slide">
+                        <!-- title, description and photo dynamically inserted from javascript -->
+                      </li>
+                      <div class="clear"></div>   
+                  </ul>
+              </div>
 
-                <span class="nav_arrow next" style="float: left;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
-                </span>
-          
-            </div>   
-            <div style="clear:both;"></div>   
-    </div>
+              <button class="nav_arrow next">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+              </button>   
+          </div>   
+    </section>
     
+    <section id="copyContainer">
+      <article class="body-copy">
+            <!-- copy dynamically inserted from Javascript -->
+      </article>
+    </section>
+
+    <section id="thumbsConatainer">
+      <h2>Check out the complete gallery...</h2>
+      <ul class="gallery-thumbs">
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+      </ul>
+    </section>
+    
+    <footer>
+      <p>Written and developed by Dave Churilla - churilla@gmail.com, <a href="http://portfolio.davechurilla.com">portfolio.davechurilla.com</a></p>
+    </footer>
 
     <!-- build:js scripts/vendor.js -->
     <!-- <script src="/bower_components/jquery/dist/jquery.js"></script> -->
@@ -61,6 +88,18 @@
     
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
+    <script>
+      window.addEventListener('resize', function() {
+        var slide = document.getElementsByClassName('slide')[0];
+        var slideImgTitle = document.getElementsByClassName('img-title')[0];
+        var slideImg = document.getElementsByClassName('slide-img')[0];
+        var slideImgTitleHeight = slideImgTitle.offsetHeight;
+        var slideImgHeight= slideImg.offsetHeight;
+        var slideHeight = parseInt(slideImgTitleHeight) + parseInt(slideImgHeight);
+        slide.style.height = slideHeight + 'px';
+        console.log('resized');
+      });
+    </script>    
     <!-- endbuild -->
   </body>
 </html>
