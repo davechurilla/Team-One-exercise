@@ -16,11 +16,12 @@
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">  
     <!-- endbuild <-->
-
+<!-- 
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">   -->
     
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
@@ -31,28 +32,30 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    <header><h1 >Totally Kickass Kitten Slideshow!</h1></header>
+    <header>
+    <div style="color:white;">
+      <a style="color:white; float: left;" class="navbar-brand overlay-header-logo" href="#nav-top"> DC</a>
+      <span>Totally Kickass Kitten Slideshow!</span>
+    </div>
+    
+    </header>
 
     <section id="heroUnit">
-      
+      <button class="nav_arrow prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+      </button>         
           <div class="slider">
-              <button class="nav_arrow prev">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
-              </button>   
 
-              <div class="frame">
-                  <ul class="slides" id="slideContainer">
-                      <li class="slide">
-                        <!-- title, description and photo dynamically inserted from javascript -->
-                      </li>
-                      <div class="clear"></div>   
-                  </ul>
-              </div>
-
-              <button class="nav_arrow next">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
-              </button>   
+            <ul class="slides" id="slideContainer">
+                <li class="slide">
+                  <!-- title, description and photo dynamically inserted from javascript -->
+                </li>
+            </ul>
+ 
           </div>   
+      <button class="nav_arrow next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+      </button>  
     </section>
     
     <section id="copyContainer">
@@ -63,41 +66,50 @@
 
     <section id="thumbsConatainer">
       <h2>Check out the complete gallery...</h2>
-      <ul class="gallery-thumbs">
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
-        <li class="thumb"><img src="http://placekitten.com/g/65/65" class="gallery-img" width="65" alt="Gallery thumbnail" /></li>
+      <ul class="gallery-thumbs" id="thumbsList">
+        <!-- copy dynamically inserted from Javascript -->
       </ul>
     </section>
     
     <footer>
       <p>Written and developed by Dave Churilla - churilla@gmail.com, <a href="http://portfolio.davechurilla.com">portfolio.davechurilla.com</a></p>
     </footer>
+    
+    <div id="overlay">
+      <div class="box box3">
+        <svg viewbox="0 0 40 40">
+          <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+        </svg>
+      </div>    
+    </div>
 
-    <!-- build:js scripts/vendor.js -->
-    <!-- <script src="/bower_components/jquery/dist/jquery.js"></script> -->
-    <!-- <script src="/bower_components/modernizr/modernizr.js"></script> -->
-    <!-- endbuild -->
+    <section id="galleryUnit">
+      <button class="nav_arrow prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"/></g></svg>
+      </button>         
+          <div class="slider">
+
+            <ul class="slides" id="slideContainer">
+                <li class="slide">
+                  <!-- title, description and photo dynamically inserted from javascript -->
+                </li>
+            </ul>
+
+          </div>   
+      <button class="nav_arrow next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 501.5 501.5"><g><path fill="#000" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"/></g></svg>
+      </button>            
+    </section>      
     
     <!-- build:js scripts/main.js -->
+    <script src="scripts/global.js"></script>
     <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+    
     <script>
-      window.addEventListener('resize', function() {
-        var slide = document.getElementsByClassName('slide')[0];
-        var slideImgTitle = document.getElementsByClassName('img-title')[0];
-        var slideImg = document.getElementsByClassName('slide-img')[0];
-        var slideImgTitleHeight = slideImgTitle.offsetHeight;
-        var slideImgHeight= slideImg.offsetHeight;
-        var slideHeight = parseInt(slideImgTitleHeight) + parseInt(slideImgHeight);
-        slide.style.height = slideHeight + 'px';
-        console.log('resized');
+        window.addEventListener('resize', function() {
+        setImgHeight(0); 
+        // setImgHeight(1); 
       });
     </script>    
     <!-- endbuild -->
