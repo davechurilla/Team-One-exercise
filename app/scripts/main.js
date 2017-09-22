@@ -173,6 +173,11 @@ function openGallery(id) {
 	idCheck();
 	currentImg('#galleryUnit',id);	
 	setTimeout(function(){setImgHeight(1);},200);
+
+    window.addEventListener('resize', function() {
+    setImgHeight(1); 
+    // setImgHeight(1); 
+    });	
 }
 
 //use the main gallery db to create the thumbnails that will launch the gallery in a modal window

@@ -120,34 +120,16 @@ header {
           top:0;right:0;bottom:0;left:0;
           height: auto; 
           .slide-content {                   
-            position: absolute;
+            position: relative;
             z-index: 1;
             transition:all 0.5s ease-in-out;  
-            transform: transition;  
-            &.fadeout  {
-                opacity: 0;
-                display: block;
-                position: absolute;
-                // z-index: 10 !important;
-            }
-            &.fadein  {
-                opacity: 1;
-                display: block;
-                position: absolute;    
-                // z-index:999 !important;            
-            }               
-            &.under {
-              z-index: 0;
-            }
+            transform: transition;            
             img {
               width:100%;
               height:auto;
-              // opacity:0;
               display: block;
             }
-            // .animated {
-              transition:all 0.5s ease-in-out;
-            // }
+            transition:all 0.5s ease-in-out;
             .img-title {
               width: 100%;
               top:0;
@@ -157,10 +139,6 @@ header {
               background: #cc6633;
               color: #fff; 
               text-align: center;
-              // border-top-right-radius: 20px;
-              // border-top-left-radius: 20px;
-              // border-top: 5px solid #CDC6AE;
-              // border-bottom: 5px solid #CDC6AE;
             h4 {
               font-size: 1.5rem;
               line-height:1.75rem;
@@ -297,7 +275,6 @@ footer {
   .box3 { width: 20px; }
 
   svg {
-    // border: 1px solid red;
     display: block;
   }
 
@@ -334,5 +311,151 @@ footer {
 /* Media queries - small breakpoint (mobile) */
 /*********************************************/
 
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-width : 480px) {
+/* Styles */
 
+/**********************/
+/* Page header styles */
+/**********************/
+
+  header { 
+    height: 80px; 
+    border-bottom: 3px solid #CDC6AE;
+    padding: 20px 10px 0;
+    div {
+      font-size: 0.8rem;
+      a {
+      font-size: 2.0em;
+      }
+      span {
+        font-size: 1.25rem;
+        bottom:10px;
+      }
+    } 
+  }
+
+//page width for mobile
+#heroUnit, #galleryUnit, #copyContainer, #thumbsConatainer, footer {
+  width: 85%;
+}
+
+/************************/
+/* Hero Carousel styles */
+/************************/
+
+#heroUnit, #galleryUnit {
+    margin:25px auto;
+    padding: 0;
+    border-radius: 10px;
+
+  // Slider styles are shared between Hero and Main Gallery Carousel.
+  // The id values #heroUnit and #galleryUnit define each in section tag 
+    .slider {
+      .slides { 
+          margin: 0;
+          .slide {
+            min-width: 100%;
+            position: relative;
+            .slide-content {                   
+              .img-title {
+                padding: 10px;
+              h4 {
+                font-size: 1.25rem;
+                line-height:1.5rem;
+              }
+              p {
+                font-size: 0.9rem;
+                line-height: 1.25rem;
+              }           
+            }
+          }
+        }
+      }     
+    }
+    .nav_arrow {
+      margin: 0 2px;
+      z-index: 10;
+      width: 30px;
+      height: 30px;
+      svg {
+      width: 20px;
+      height: 20px;        
+      }
+    }   
+  }  
+
+/********************/
+/* Body copy styles */
+/********************/
+
+  #copyContainer {
+    .body-copy {
+      padding: 0;
+      h2 {
+        font-size: 1.25em;
+      }
+      p {
+        font-size: 0.9em;
+        line-height: 1.2em;
+      }
+    }
+  } 
+
+/***********************************/
+/* Hero Carousel thumbnails styles */
+/***********************************/
+
+  #thumbsConatainer {
+
+    h2 { 
+      padding-left: 0; 
+      font-size: 1.25em;
+    }
+    .gallery-thumbs {
+      margin: 0 10px;
+      padding: 0;
+    }
+  }
+
+/*****************/
+/* Footer styles */
+/*****************/
+
+footer {
+  border-top: 1px solid #999;
+  margin: 20px auto;
+  p {
+    font-size: 0.75rem;
+    line-height: 1.0rem;
+  }
+}
+
+
+/************************/
+/* Modal/overlay styles */
+/************************/
+
+  #galleryUnit {
+    background: none;
+  }
+
+// **end of media query for small break point**
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+/* Styles */
+}
 
