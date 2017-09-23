@@ -33,3 +33,30 @@ Modernizr.addTest('hires', function() {
 function divRemove() {
 	var slideContent = document.querySelector('#heroUnit').removeChild(document.querySelector('.slider'));
 }
+
+// snippet to preload images for default devices (desktop), or for retina devices.
+function preloadImages(array) {
+    if (!preloadImages.list) {
+        preloadImages.list = [];
+    }
+    var list = preloadImages.list;
+    for (var i = 0; i < array.length; i++) {
+        var img = new Image();
+        img.onload = function() {
+            var index = list.indexOf(this);
+            if (index !== -1) {
+                list.splice(index, 1);
+            }
+        }
+
+        list.push(img);
+        img.src = array[i];
+    }
+}
+
+// invoke image preloader
+if(Modernizr.hires && Modernizr.touch) {
+	preloadImages(['images/retina/cat01.jpg', 'images/retina/cat02.jpg', 'images/retina/cat03.jpg', 'images/retina/cat04.jpg', 'images/retina/cat05.jpg', 'images/retina/cat06.jpg', 'images/retina/cat07.jpg', 'images/retina/cat08.jpg', 'images/retina/cat09.jpg', 'images/retina/cat10.jpg']);
+} else {
+	preloadImages(['images/default/cat01.jpg', 'images/default/cat02.jpg', 'images/default/cat03.jpg', 'images/default/cat04.jpg', 'images/default/cat05.jpg', 'images/default/cat06.jpg', 'images/default/cat07.jpg', 'images/default/cat08.jpg', 'images/default/cat09.jpg', 'images/default/cat10.jpg']);
+}
