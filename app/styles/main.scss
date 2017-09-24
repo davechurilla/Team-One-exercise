@@ -114,7 +114,6 @@ header {
     .slides { 
         position: relative;
         list-style-type: none;
-        
         padding: 0;
         display: flex;
         -webkit-padding-start: 0;
@@ -124,17 +123,16 @@ header {
           position: relative;
           top:0;right:0;bottom:0;left:0;
           height: auto; 
+          transition:all 0.25s ease-in-out;
           .slide-content {                   
             position: relative;
             float: left;
             z-index: 1;
-            transition:all 0.5s ease-in-out;         
             img {
               width:100%;
               height:auto;
               display: block;
             }
-            transition:all 0.5s ease-in-out;
             .img-title {
               width: 100%;
               padding: 20px 0 15px;
