@@ -1,5 +1,6 @@
 'use strict';
 
+// set heightof slide container using the height of the image after it loads
 function setImgHeight(index) {
         var slide = document.getElementsByClassName('slide')[index];
         var slideImgTitle = document.getElementsByClassName('img-title')[index];
@@ -17,6 +18,7 @@ function setImgHeight(index) {
  * @license MIT
  */
 
+// add a feature test to Modernizr to check for retina display
 Modernizr.addTest('hires', function() {
     // starts with default value for modern browsers
     var dpr = window.devicePixelRatio ||
@@ -30,11 +32,18 @@ Modernizr.addTest('hires', function() {
     return !!(dpr > 1);
 });
 
-function divRemove() {
-	var slideContent = document.querySelector('#heroUnit').removeChild(document.querySelector('.slider'));
+
+// add remove() support for IE
+if (!('remove' in Element.prototype)) {
+    Element.prototype.remove = function() {
+        if (this.parentNode) {
+            this.parentNode.removeChild(this);
+        }
+    };
 }
 
-// snippet to preload images for default devices (desktop), or for retina devices.
+// snippet to preload images for default devices (desktop), or for retina devices
+// once all images are loaded, setImgHeight is fired
 function preloadImages(array) {
     if (!preloadImages.list) {
         preloadImages.list = [];

@@ -1,5 +1,11 @@
 'use strict';
 
+/**
+ * @author Dave Churilla
+ * churilla@gmail.com
+ * 9/23/2017
+ */
+
 (function() {
 
 // db object for first five slides, displayed in the hero
@@ -29,13 +35,14 @@ for(var i=0; i < extendedGalleryDb.length; i++) {
 	mainGalleryDb.push(extendedGalleryDb[i]);
 }
 
+var prevBtn = document.querySelector('#heroPrev');
+var nextBtn = document.querySelector('#heroNext');
+
 // init and start hero gallery, next and prev nav, and thumbnails
 function init() {
 	currentImg('#slideContainer',undefined,'afterbegin');
-	heroNext();
-	heroPrev();
 	galleryThumbs();
-	// if(Modernizr.hires) { setTimeout(function(){setImgHeight(0);},250); }
+	window.onload = function() { setImgHeight(0); }
 }
 
 // output and render slider and initital image
@@ -67,8 +74,7 @@ function currentImg(container,id,insert){
 		  
 	// Parent.innerHTML = '';
 	Parent.insertAdjacentHTML(insert, template);
-	setTimeout(function(){currentCopy();},500);
-	
+	setTimeout(function(){currentCopy();},500);	
 };
 
 // populates copy from db for appropriate slide below the slider interface
@@ -80,56 +86,63 @@ function currentCopy() {
     copyParent.insertAdjacentHTML('afterbegin', copyTemplate);
 }
 
+// reset the image container
+// set up the image to slide and trigger animation
+// these two functions (nextBtnAction and prevBtnAction) are shared by both carousels
+function nextBtnAction(carousel,id) {
+	var slideContainer = document.querySelector(carousel);
+    var slide = document.querySelectorAll(carousel + ' .slide');
+    slideContainer.setAttribute('style', '');
+
+    currentImg(carousel,id,'beforeend');
+    var containerWidth = slideContainer.offsetWidth;
+	slideContainer.style.transform = 'translate(-' + containerWidth + 'px,0)';
+	setTimeout(function(){slideContainer.style.transition='unset';slideContainer.style.transform='none'; slide[0].remove();},500);	
+}
+
+function prevBtnAction(carousel,id) {
+	var slideContainer = document.querySelector(carousel);
+    var slide = document.querySelector(carousel + ' .slide');
+    slide.className = 'slide trash';
+    var trash = document.querySelector(carousel + ' .trash');
+    slideContainer.setAttribute('style', '');
+
+    currentImg(carousel,id,'afterbegin');
+    var containerWidth = slideContainer.offsetWidth;
+    slideContainer.style.left = '-' + containerWidth + 'px';
+	slideContainer.style.transform = 'translate(' + containerWidth + 'px,0)';
+	setTimeout(function(){trash.remove();slideContainer.style.left = '0';slideContainer.style.transform='none';slideContainer.style.transition='unset';},500);    
+}
+
 // adjust db when next button is pressed
-// render slider image again at the 0 index
-function heroNext(){
-    var nextBtn = document.querySelector('.next');
-    function nextSlide(){
-        var zeroIndex = heroGalleryDb.splice(0, 1);		
-		var slideContainer = document.querySelector('#heroUnit #slideContainer');
-        var slide = document.querySelectorAll('#heroUnit #slideContainer .slide');
-        heroGalleryDb.push(zeroIndex[0]);
-
-        slideContainer.setAttribute('style', '');
-
-        currentImg('#slideContainer',undefined,'beforeend');
-        var containerWidth = slideContainer.offsetWidth;
-		slideContainer.style.transform = 'translate(-' + containerWidth + 'px,0)';
-		setTimeout(function(){slideContainer.style.transition='unset';slideContainer.style.transform='none'; slide[0].remove();},500);
-    }
-    nextBtn.addEventListener('mousedown', function(e) {
-            nextSlide();
-            this.removeEventListener('mousedown', this);	
-    });
-};
+// render slider image content at the 0 index of db
+function nextSlide(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var zeroIndex = heroGalleryDb.splice(0, 1);		
+    heroGalleryDb.push(zeroIndex[0]);
+    nextBtnAction('#slideContainer');
+    nextBtn.removeEventListener('mousedown', this, false);
+}
 
 // adjust db when prev button is pressed
-// render slider image content again at the 0 index
-// animate into place
-function heroPrev(){
-    var prevBtn = document.querySelector('.prev');
-    function prevSlide(e){
-	    var lastIndex = heroGalleryDb.splice((heroGalleryDb.length - 1), 1);
-		var slideContainer = document.querySelector('#heroUnit #slideContainer');
-	    var slide = document.querySelector('#heroUnit #slideContainer .slide');
-	    slide.className = 'slide trash';
-	    var trash = document.querySelector('#heroUnit #slideContainer .trash');
-	    heroGalleryDb.unshift(lastIndex[0]);
+// render slider image content at the 0 index of db
+function prevSlide(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var lastIndex = heroGalleryDb.splice((heroGalleryDb.length - 1), 1);
+    heroGalleryDb.unshift(lastIndex[0]);
+    prevBtnAction('#slideContainer');
+    prevBtn.removeEventListener('mousedown', this, false);
+}
 
-	    slideContainer.setAttribute('style', '');
+nextBtn.addEventListener('mousedown',
+        nextSlide,
+        false);
 
-	    currentImg('#slideContainer',undefined,'afterbegin');
-	    var containerWidth = slideContainer.offsetWidth;
-	    slideContainer.style.left = '-' + containerWidth + 'px';
-		slideContainer.style.transform = 'translate(' + containerWidth + 'px,0)';
-		setTimeout(function(){trash.remove();slideContainer.style.left = '0';slideContainer.style.transform='none';slideContainer.style.transition='unset';},500);
-			
-    }
-    prevBtn.addEventListener('mousedown', function(e) {
-            prevSlide();
-            this.removeEventListener('mousedown', this);
-    });
-};
+prevBtn.addEventListener('mousedown',
+        prevSlide,
+        false);
 
 // this function contains everything for the main gallery in the modal
 function openGallery(id) {
@@ -139,65 +152,73 @@ function openGallery(id) {
 	id = parseInt(id);
 	var closeBtn = document.querySelector('#overlay .box');
 	var mGallLength = mainGalleryDb.length;
-	var modalNextBtn = document.querySelector('#galleryUnit .next');
-	var modalPrevBtn = document.querySelector('#galleryUnit .prev');
+	var modalNextBtn = document.querySelector('#galleryNext');
+	var modalPrevBtn = document.querySelector('#galleryPrev');
+	var gallerySlideContainer = document.querySelector('#gallerySlideContainer');
 	
 	// close button function
 	function closeGallery() {
 		overlay.className = '';
-		galleryUnit.className = '';    		
+		galleryUnit.className = '';
+		gallerySlideContainer.innerHTML = '';
+		modalNextBtn.removeEventListener('click', modalNextSlide);
+		modalPrevBtn.removeEventListener('click', modalPrevSlide);	 	
+		// id = '';	
 	}	
 
 	// counter functions for prev and next buttons
-    function modalNextSlide(){
+	// args are passed to BtnAction functions defined above
+    function modalNextSlide(e){
+	    e.preventDefault();
+	    e.stopPropagation();
 	    if(mGallLength != (parseInt(id) + 1)) {
 	        id++;
 	        if(mGallLength == (id + 1)) {modalNextBtn.className = 'nav_arrow next disabled';}
-			var slideContent = document.querySelector('#galleryUnit #slideContainer .slide .slide-content');
-	        setTimeout(function(){currentImg('#galleryUnit #slideContainer',id);},500);      
+	     	nextBtnAction('#gallerySlideContainer',id);
 	    } 
+        idCheck();
+        // modalNextBtn.removeEventListener('click', this);	    
 	}
 
-    function modalPrevSlide(){
+    function modalPrevSlide(e){
+	    e.preventDefault();
+	    e.stopPropagation();
 	    if(id != 0) {
 	        id--;
 	        if(id == 0) {modalPrevBtn.className = 'nav_arrow prev disabled';}
-			var slideContent = document.querySelector('#galleryUnit #slideContainer .slide .slide-content');
-		    setTimeout(function(){currentImg('#galleryUnit #slideContainer',id);},500);      
+	        prevBtnAction('#gallerySlideContainer',id);
 	    } 
+        idCheck();
+        // modalPrevBtn.removeEventListener('click', this);    
 	}
 
 	// previous and next buttons to be used within modal slider
-    modalNextBtn.addEventListener('mousedown', function(e) {
-        modalNextSlide();
-        idCheck();
-        this.removeEventListener('mousedown', this);	
-    });
+    modalNextBtn.addEventListener('click',
+        modalNextSlide
+    );
 
-    modalPrevBtn.addEventListener('mousedown', function(e) {
-        modalPrevSlide();
-        idCheck();
-        this.removeEventListener('mousedown', this);	
-    });    
+    modalPrevBtn.addEventListener('click',
+        modalPrevSlide
+    );    
 
     // close the modal and the overlay
     closeBtn.addEventListener('click', function(e) {
     	closeGallery();
 	});	
 
-	// check id to check if one needs to be disabled on first image, load image
+	// check index of current active image
+	// disable prev or next nav arrow if needed
 	function idCheck() {
 		if(mGallLength != (id + 1)) {modalNextBtn.className = 'nav_arrow next';} else {modalNextBtn.className = 'nav_arrow next disabled';}
 		if(id != 0) {modalPrevBtn.className = 'nav_arrow prev';} else {modalPrevBtn.className = 'nav_arrow prev disabled';}
 	}
 
 	idCheck();
-	currentImg('#galleryUnit',id);	
-	setTimeout(function(){setImgHeight(1);},200);
+	currentImg('#gallerySlideContainer',id,'afterbegin');	
+	setTimeout(function(){setImgHeight(1);},500);
 
     window.addEventListener('resize', function() {
     setImgHeight(1); 
-    // setImgHeight(1); 
     });	
 }
 
