@@ -97,7 +97,11 @@ Aliquam dignissim sed leo vitae ultrices. Nullam nisl ante, scelerisque vitae me
 
 ## About the Author
 
-<div style="float: left; padding: 0 20px 20px;"><img src="http://portfolio.davechurilla.com/images/parallaxbg/19d.jpg" alt="Dave Churilla profile pic"></div>
-<div>Vivamus quam orci, mollis ac leo ornare, varius gravida metus. Nulla ut mauris posuere urna condimentum tempor. Praesent et sem urna. Praesent consectetur erat nec mauris elementum, eu maximus odio faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed varius posuere nisi quis eleifend. Donec viverra felis id mi elementum venenatis. Nam feugiat, quam id mattis fringilla, dolor tortor ultricies nibh, eu vehicula mauris est a velit.</div>
+<table>
+	<tr>
+		<td style="padding: 0 20px 20px;"><img src="http://portfolio.davechurilla.com/images/parallaxbg/19d.jpg" alt="Dave Churilla profile pic"></td>
+		<td valign="top">Vivamus quam orci, mollis ac leo ornare, varius gravida metus. Nulla ut mauris posuere urna condimentum tempor. Praesent et sem urna. Praesent consectetur erat nec mauris elementum, eu maximus odio faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed varius posuere nisi quis eleifend. Donec viverra felis id mi elementum venenatis. Nam feugiat, quam id mattis fringilla, dolor tortor ultricies nibh, eu vehicula mauris est a velit.</td>
+	</tr>
+</table>
 
 
