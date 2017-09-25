@@ -57,9 +57,9 @@ Documentation: Documentation style is up to you and will be part of the evaluati
 
 #### The Result
 
-The files in this repository comprise the completed UI Code Exercise web appication, created by adhereing to the provided requirements outlined above. Please download/clone and install the application using the following instructions in the next section. Once downlaoded and installed, please consider the running application for evaluation of the completed photo gallery exercise. The source code created during development and the final compiled, optimized, published build have been provided. 
+The files in this repository comprise the completed UI Code Exercise web appication, created by adhereing to the provided requirements outlined above. Please download/clone and install the application using the following instructions in the next section. Once downloaded and installed, please run the application for evaluation as the completed photo gallery exercise. The source code created during development (in the `app` directory) and the final compiled, optimized, published build (int he `dist` directory) have been provided. 
 
-The final directory structure of the published application is illustrated here in the following screen shot:
+The final directory structure of the published application in the `dist` directory is illustrated here in the following screen shot:
 
 ![](proj_dir.png)
 
