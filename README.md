@@ -131,7 +131,7 @@ Please feel free to contact me with any questions or comments at my personal ema
 
 <table>
 	<tr>
-		<td style="padding: 0 20px 20px;" width="25%"><img src="http://portfolio.davechurilla.com/images/parallaxbg/19d.jpg" alt="Dave Churilla profile pic"></td>
+		<td style="padding: 0 20px 20px;" width="25%" valign="top"><img src="http://portfolio.davechurilla.com/images/parallaxbg/19d.jpg" alt="Dave Churilla profile pic"></td>
 		<td valign="top">
 			I am a successful technology professional with proven experience in front end web application development. My primary role on previous projects was full stack front end development, working on large enterprise-level websites for Mattel, Toyota, AARP and Bloomin’ Brands.
 			Below is an overview of some of my strengths and accomplishments:
@@ -142,7 +142,6 @@ Please feel free to contact me with any questions or comments at my personal ema
 				<li>Team Management: Managed a team of front end developers with the focus on creating and delivering assets for AARP CRM campaigns. Adhered to a very strict set of standards for consistency and compatibility across all email clients. Organized and hosted weekly check-in meetings with the team to discuss status of projects. Performed regular code reviews, while enforcing established coding standards for all final deliverables.</li>
 			</ul>
 			 Please review [my portfolio](http://portfolio.davechurilla.com) and [download my resume](http://portfolio.davechurilla.com/DAVE_CHURILLA_Resume.pdf) for more details regarding my experience and skills. My current contact information can be found on my resume as well. Thanks again!
-
 		</td>
 	</tr>
 </table>
