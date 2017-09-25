@@ -93,7 +93,6 @@ function nextBtnAction(carousel,id) {
 	var slideContainer = document.querySelector(carousel);
     var slide = document.querySelectorAll(carousel + ' .slide');
     slideContainer.setAttribute('style', '');
-    console.log(id);
     currentImg(carousel,id,'beforeend');
     var containerWidth = slideContainer.offsetWidth;
 	slideContainer.style.transform = 'translate(-' + containerWidth + 'px,0)';
@@ -106,7 +105,6 @@ function prevBtnAction(carousel,id) {
     slide.className = 'slide trash';
     var trash = document.querySelector(carousel + ' .trash');
     slideContainer.setAttribute('style', '');
-    console.log(id);
     currentImg(carousel,id,'afterbegin');
     var containerWidth = slideContainer.offsetWidth;
     slideContainer.style.left = '-' + containerWidth + 'px';
@@ -162,7 +160,7 @@ function openGallery(id) {
 		galleryUnit.className = '';
 		gallerySlideContainer.innerHTML = '';
 		modalNextBtn.removeEventListener('click', modalNextSlide);
-		modalPrevBtn.removeEventListener('click', modalPrevSlide);
+		modalPrevBtn.removeEventListener('click', modalPrevSlide);	 	
 	}	
 
 	// counter functions for prev and next buttons
@@ -217,9 +215,9 @@ function openGallery(id) {
 	currentImg('#gallerySlideContainer',id,'afterbegin');	
 	setTimeout(function(){setImgHeight(1);},500);
 
-    window.addEventListener('resize',
-    setImgHeight(1)
-    );	
+  window.addEventListener('resize', function() {
+    setImgHeight(1);
+  });
 }
 
 //use the main gallery db to create the thumbnails that will launch the gallery in a modal window

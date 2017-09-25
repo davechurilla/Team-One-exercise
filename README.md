@@ -135,18 +135,14 @@ Please feel free to contact me with any questions or comments at my personal ema
 		<td valign="top">
 			I am a successful technology professional with proven experience in front end web application development. My primary role on previous projects was full stack front end development, working on large enterprise-level websites for Mattel, Toyota, AARP and Bloomin’ Brands.
 			Below is an overview of some of my strengths and accomplishments:
-
-			- User Interface Development: Possess over 15 years in the field of front end web development with an extensive knowledge of coding standards and best practices for cross-compatibility between popular browsers and devices. Expertise includes mastery-level knowledge of HTML5, CSS3/SASS, JavaScript, including current JavaScript frameworks and libraries. Managed front-end integration into ASP.NET MVC project environments, working closely with .NET engineers. Performed thorough end-to-end testing, troubleshooting, and bug fixes prior to launch. Positioned as front end tech lead and contributor for enterprise-level, full stack development of responsive websites and landing pages for Toyota, Mattel, Roy’s Restaurant, Fleming’s Steakhouse, and the RAPP 
-			company website.
-
-			- HTML Email Development: Subject matter expert of standards and best practices for responsive HTML email development. Performed testing and QA in all current email environments such as Outlook, Gmail and Yahoo as standard process work flow before deployment of all emails. Set up final email assets for deployment using Salesforce Marketing Cloud for segmentation, A/B testing, and populating dynamic content based on user data and click behavior. Excelled as front-end team lead and contributor, delivering hundreds of email campaigns for AARP, Toyota and Bank of America.
-
-			- Team Management: Managed a team of front end developers with the focus on creating and delivering assets for AARP CRM campaigns. Adhered to a very strict set of standards for consistency and compatibility across all email clients. Organized and hosted weekly check-in meetings with the team to discuss status of projects. Performed regular code reviews, while enforcing established coding standards for all final deliverables.
-
+			<ul>
+				<li>User Interface Development: Possess over 15 years in the field of front end web development with an extensive knowledge of coding standards and best practices for cross-compatibility between popular browsers and devices. Expertise includes mastery-level knowledge of HTML5, CSS3/SASS, JavaScript, including current JavaScript frameworks and libraries. Managed front-end integration into ASP.NET MVC project environments, working closely with .NET engineers. Performed thorough end-to-end testing, troubleshooting, and bug fixes prior to launch. Positioned as front end tech lead and contributor for enterprise-level, full stack development of responsive websites and landing pages for Toyota, Mattel, Roy’s Restaurant, Fleming’s Steakhouse, and the RAPP 
+				company website.</li>
+				<li>HTML Email Development: Subject matter expert of standards and best practices for responsive HTML email development. Performed testing and QA in all current email environments such as Outlook, Gmail and Yahoo as standard process work flow before deployment of all emails. Set up final email assets for deployment using Salesforce Marketing Cloud for segmentation, A/B testing, and populating dynamic content based on user data and click behavior. Excelled as front-end team lead and contributor, delivering hundreds of email campaigns for AARP, Toyota and Bank of America.</li>
+				<li>Team Management: Managed a team of front end developers with the focus on creating and delivering assets for AARP CRM campaigns. Adhered to a very strict set of standards for consistency and compatibility across all email clients. Organized and hosted weekly check-in meetings with the team to discuss status of projects. Performed regular code reviews, while enforcing established coding standards for all final deliverables.</li>
+			</ul>
 			 Please review [my portfolio](http://portfolio.davechurilla.com) and [download my resume](http://portfolio.davechurilla.com/DAVE_CHURILLA_Resume.pdf) for more details regarding my experience and skills. My current contact information can be found on my resume as well. Thanks again!
 
 		</td>
 	</tr>
 </table>
-
-
