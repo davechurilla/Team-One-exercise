@@ -1,4 +1,4 @@
-# Team One exercise
+# Team One UI Coding Exercise
 
 > This project is being submitted to the Team One development team to be considered and evaluated as a web app coding proficiency exercise. The content useed pays homage and respect to a [image placeholder service](http://www.placekitten.com) used by many developers and has become a modern classic.
 
@@ -66,8 +66,15 @@ The final directory structure of the published application is illustrated here i
 
 ## Installation, Running and Previewing the App
 
-Etiam suscipit massa mauris, ut interdum neque bibendum nec. Nullam facilisis urna vel nisl euismod, eget blandit mauris congue. Vivamus et hendrerit risus. Praesent facilisis ex sit amet ipsum interdum lacinia. Donec sollicitudin ultrices ligula at gravida. Sed mollis purus a massa tristique finibus. Mauris a bibendum elit, sed auctor enim. Duis et metus elit. Sed quis quam fermentum, mattis ex eu, consectetur leo. Suspendisse potenti.
+To get a preview of the [final compressed and compiled build of the application](http://teamone.davechurilla.com), I have hosted a current copy of it on my personal web host, [here](http://teamone.davechurilla.com). To do a full review of the source code assets
 
+The quickest way to get this project set up is to clone this repository and install it onto your local drive using Node Package Manager. You will need to have Node installed (NPM is bundled with the install), along with global install of both Gulp and Bower. Wih Node installed, you can install Gulp and Bower in one simple step. Using Terminal on a Mac, or Command Prompt in Windows, run this: `npm install --global gulp-cli bower`. Once this is done, you will be able to install all project dependencies and run the application locally. Here are a few steps to get started:
+
+- `cd` into the directory you just cloned to your local drive. It will be called Team-One-exercise.
+- While in the project directory in command line, run `npm install`. You need to run this as administrator in order to install without running into errors. On a Mac, you should run this command as `sudo npm install`. You will need to provide a password to continue (same password you use to login to your Mac). This will take a few minutes, as there are several Node packages installed with [this particular web app scaffold](https://github.com/yeoman/generator-webapp).
+- run `bower install`
+- All packages and dependencies should be installed at this point. To run the application: `gulp serve`. This will run the application in your browser at http://localhost:9000 from the 'app' directory, which contains all of the source code files. These will be the files that should be reviewed and evaluated for coding proficiency.
+- The files in the `dist` directory comprise the compiled build of the project. These files can be dropped into the root directory of a server and the completed app can also be reviewed in this way. 
 
 ## Development Tools and the Code
 
