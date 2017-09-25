@@ -1,13 +1,13 @@
 # Team One UI Coding Exercise
 
-> This project is being submitted to the Team One development team to be considered and evaluated as a web app coding proficiency exercise. The content useed pays homage and respect to a [image placeholder service](http://www.placekitten.com) used by many developers and has become a modern classic.
+> This project is being submitted to the Team One development team to be considered and evaluated as a web app coding proficiency exercise. The content used pays homage and respect to a [image placeholder service](http://www.placekitten.com) used by many developers and has become a modern classic.
 
 ![](screenshot.png)
 
 
 ## Introduction
 
-When asked to advance to the second stage of the interview process for an open Senior Web Developer position, Lead UI Architect Rodolfo Dengo provided me with the following UI Code Exercise assigmnent requirements: 
+When asked to advance to the second stage of the interview process for an open Senior Web Developer position, Lead UI Architect Rodolfo Dengo provided me with the following UI Code Exercise assignment requirements: 
 
 ### Requirements:
 
@@ -18,7 +18,7 @@ When asked to advance to the second stage of the interview process for an open S
 - NO CSS frameworks (bootstrap, Zurb etc)
 - Jquery Allowed but Vanilla JS preferred
 - NO jQuery Plugins.
-- Build System (gulp, grunt, webpack) Allowed and encouraged
+- Build System (Gulp, Grunt, Webpack) Allowed and encouraged
 - NO JS frameworks (vue, ember, knockout, angular, backbone, etc)
 
 #### Hero Carousel
@@ -57,7 +57,7 @@ Documentation: Documentation style is up to you and will be part of the evaluati
 
 #### The Result
 
-The files in this repository comprise the completed UI Code Exercise web appication, created by adhereing to the provided requirements outlined above. Please download/clone and install the application using the following instructions in the next section. Once downloaded and installed, please run the application for evaluation as the completed photo gallery exercise. The source code created during development (in the `app` directory) and the final compiled, optimized, published build (int he `dist` directory) have both been provided. 
+The files in this repository comprise the completed UI Code Exercise web application, created by adhering to the provided requirements outlined above. Please download/clone and install the application using the following instructions in the next section. Once downloaded and installed, please run the application for evaluation as the completed photo gallery exercise. The source code created during development (in the `app` directory) and the final compiled, optimized, published build (int he `dist` directory) have both been provided. 
 
 The final directory structure of the published application in the `dist` directory is illustrated here in the following screen shot:
 
@@ -70,7 +70,7 @@ As per the provided requirements, the functionality of the app was written using
 
 To get a preview of the [final compressed and compiled build of the application](http://teamone.davechurilla.com), I have hosted a current copy of it on my personal web host, [here](http://teamone.davechurilla.com). To do a full review of the source code assets, you will need to follow the instructions below. This will also give you the ability to run the application locally with Node and Gulp.
 
-The quickest way to get this project set up is to clone this repository and install it onto your local drive using Node Package Manager. You will need to have Node installed (NPM is bundled with the install), along with global install of both Gulp and Bower. Wih Node installed, you can install Gulp and Bower in one simple step. Using Terminal on a Mac, or Command Prompt in Windows, run this: `npm install --global gulp-cli bower`. Once this is done, you will be able to install all project dependencies and run the application locally. Here are a few steps to get started:
+The quickest way to get this project set up is to clone this repository and install it onto your local drive using Node Package Manager. You will need to have Node installed (NPM is bundled with the install), along with global install of both Gulp and Bower. With Node installed, you can install Gulp and Bower in one simple step. Using Terminal on a Mac, or Command Prompt in Windows, run this: `npm install --global gulp-cli bower`. Once this is done, you will be able to install all project dependencies and run the application locally. Here are a few steps to get started:
 
 - `cd` into the directory you just cloned to your local drive. It will be called Team-One-exercise.
 - While in the project directory in command line, run `npm install`. You need to run this as administrator in order to install without running into errors. On a Mac, you should run this command as `sudo npm install`. You will need to provide a password to continue (same password you use to login to your Mac). This will take a few minutes, as there are several Node packages installed with [this particular web app scaffold](https://github.com/yeoman/generator-webapp).
@@ -89,7 +89,7 @@ Tools used in webapp include:
 
 - libsass: Preprocessor used for dynamic CSS authoring written in the SCSS syntax. 
 - JSLint: Javascript testing and validation used throughout the development process, and when creating build of the app.
-- Normalize.css: Reset CSS for consistency and cross-compatibilty of styles across browsers.
+- Normalize.css: Reset CSS for consistency and cross-compatibility of styles across browsers.
 - Gulp: Task manager that runs testing and optimization tools when watching, and on final build. Live reload runs while watching files and will validate code and launch/refresh browser at localhost:9000 on each save.
 - htmlmin, cssnano, uglify, imagemin - Optimization tools for compression of files when creating a build.
 
@@ -97,7 +97,7 @@ The fonts used on the page were downloaded from Google Fonts and converted using
 
 ### HTML5
 
-Clean, simple and standards-compliant mark-up was written first to frame up the structure of the page. Use of the semantic HTML approach results in clearly deliniated code that will help with ease of readability and editing. Type, order, and names of tags, along with organized commenting and spacing in code all contribute to ahereance to a standard that makes for scalable, clean HTML. Organized naming convention for IDs and class names create efficiency for next steps of authoring the CSS and Javascript code.
+Clean, simple and standards-compliant mark-up was written first to frame up the structure of the page. Use of the semantic HTML approach results in clearly delineated code that will help with ease of readability and editing. Type, order, and names of tags, along with organized commenting and spacing in code all contribute to ahereance to a standard that makes for scalable, clean HTML. Organized naming convention for IDs and class names create efficiency for next steps of authoring the CSS and Javascript code.
 
 One thing to note are the comment blocks in `app/index.html` around the references to the Javascript and the CSS dependencies that look similar to this: `<!-- build:js scripts/main.js -->` and `<!-- endbuild --> `. These are used in the build step of the Gulp tasks to indicate which CSS and Javascript files to concatenate and compress into bundled files. The final compressed build files are copied over to the `dist` directory once they're processed, and paths in the HTML output are adjusted to reference the new files.
 
@@ -105,7 +105,7 @@ The final build HTML has been thoroughly tested and passes [W3C validation](http
 
 ### CSS3
 
-CSS authoring was written using SCSS syntax, using libsass as the preprocessor as part of the steps in the Gulpfile when the files are watched or when a build is created. The output is cross-compatible CSS which will render correctly in current browsers and devices. The auto-prefixer option is used in the Gulpfile to add vendor prefixes to CSS rules so CSS3 properties will render properly in slightly older browser versions.
+CSS authoring was written using SCSS syntax, using libsass as the preprocessor as part of the steps in the Gulpfile when the files are watched or when a build is created. The output is cross-compatible CSS which will render correctly in current browsers and devices. The autoprefixer option is used in the Gulpfile to add vendor prefixes to CSS rules so CSS3 properties will render properly in slightly older browser versions.
 
 The web fonts used on the project page were downloaded from Google fonts, converted (using Font Squirrel), and imported as dependencies into the `main.scss` file. The font file types used are ttf, woff, woff2, svg and eot. All converted web font files are hosted in the `fonts` directory and imported using SCSS in the `app/styles//font.scss` file.
 
@@ -113,14 +113,14 @@ The web fonts used on the project page were downloaded from Google fonts, conver
 
 Only "Vanilla" Javascript was used for the development of this web application, without the assistance of jQuery, plugins, or additional Javascript libraries. Functionality of the photo gallery slider is written in `app/scripts/main.js`. Some additional global helper functions are defined in the `app/scripts/global` file. Upon `gulp build`, both files are validated, compressed and concatenated into one bundled file and then output to `dist/scripts/main.js`. Modernizr is also used to test for supported browser features. It is referenced in the head of the HTML file so all helper functions are available for use before the page DOM is loaded. 
 
-JSLint is used for testing and validation of the scripts througout development and in the final build. Scripts passed the linter tests with no errors and are compliant to coding standards and best practices.
+JSLint is used for testing and validation of the scripts throughout development and in the final build. Scripts passed the linter tests with no errors and are compliant to coding standards and best practices.
 
 As with the source HTML and SCSS files, the Javascript code is written in a clean, organized format with plenty of helpful comments that explain each section of the scripts for ease and reading, testing and future updates.
 
 
 ## Final Thoughts
 
-The completed application has been tested in current versions of all popular modern browsers and devices. Browsers consderied are current versions of the following: Chrome, Firefox, Safari (for Mac only), Internet Exporer 11+ (Windows only), iOS, and Android. The photo gallery functionality and transition animations work in everything and throw no errors.
+The completed application has been tested in current versions of all popular modern browsers and devices. Browsers consderied are current versions of the following: Chrome, Firefox, Safari (for Mac only), Internet Explorer 11+ (Windows only), iOS, and Android. The photo gallery functionality and transition animations work in everything and throw no errors.
 
 Page load time is minimal since all assets have been concatenated, compressed, and bundled for full optimization. To quickly view the complete and final build, point your browser to [this subdomain](http://teamone.davechurilla.com) on my personal server.
 
