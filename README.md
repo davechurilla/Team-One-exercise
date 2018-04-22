@@ -1,4 +1,4 @@
-# Team One UI Coding Exercise
+# Vanilla JavaScript Slide Show UI
 
 > This project is being submitted to the Team One development team to be considered and evaluated as a web app coding proficiency exercise. The content used pays homage and respect to a [image placeholder service](http://www.placekitten.com) used by many developers and has become a modern classic.
 
